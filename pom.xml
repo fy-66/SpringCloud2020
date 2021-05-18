@@ -25,6 +25,8 @@
       <module>cloud-consumer-hystrix-order80</module>
       <module>cloud-hystrix-dashbord9001</module>
       <module>cloud-gateway-gateway9527</module>
+    <module>cloud-config-center3344</module>
+    <module>cloud-config-center3355</module>
   </modules>
 
   <properties>
@@ -85,7 +87,6 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-
       <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
       <dependency>
         <groupId>com.alibaba</groupId>

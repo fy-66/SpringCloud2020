@@ -24,7 +24,6 @@ public class GateWayConfig {
         routes.route("path_route2",
                 r -> r.path("/guoji")
                         .uri("http://news.baidu.com/guoji"));
-
         return routes.build();
     }
 }

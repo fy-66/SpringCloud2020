@@ -6,7 +6,6 @@ import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpResponse;
-import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
@@ -16,7 +15,7 @@ import reactor.core.publisher.Mono;
  *@date 2021/5/13 11:52
  *@version 1.0
  */
-@Component
+//@Component
 @Slf4j
 public class MyLogGateWayFilter implements GlobalFilter, Ordered {
 
