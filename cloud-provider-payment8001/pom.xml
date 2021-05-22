@@ -12,6 +12,16 @@
     <artifactId>cloud-provider-payment8001</artifactId>
 
     <dependencies>
+        <!--    改造8001，引入服务链路跟踪 spring-cloud-starter-zipkin   -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.10</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

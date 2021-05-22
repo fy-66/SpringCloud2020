@@ -8,7 +8,7 @@ eureka:
     #是否从eurekaServer抓取已有的注册信息，默认为true，单节点无所谓，集群必须为true，才能配合ribbon使用负载均衡
     fetch-registry: true
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka
+      defaultZone: http://localhost:7001/eureka
       #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
   instance:
     instance-id: order80
@@ -16,4 +16,10 @@ eureka:
 
 spring:
   application:
-    name: cloud-order-service
+    name: cloud-order-servic
+    #整合链路跟踪
+  zipkin:
+    base-url: 192.168.33.33:9411/
+  sleuth:
+    sampler:
+      probability: 1 #采样率为0到1之间，1：表示全部采样

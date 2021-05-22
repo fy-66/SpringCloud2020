@@ -88,4 +88,17 @@ public class OrderController {
         return "servicePort: "+restTemplate.getForObject(uri,String.class);
     }
 
+    @GetMapping(value = "/consumer/payment/zipkin")
+    public CommonResult paymentZipkin(){
+
+        ResponseEntity<String> entity = restTemplate.getForEntity(PAYMENT_URL + "/payment/zipkin", String.class);
+
+        //只是为了测试getForEntity的信息，不经有数据，还有请求的响应信息
+        if (entity.getStatusCode().is2xxSuccessful()){
+            return CommonResult.success(entity.getBody());
+        }
+
+        return CommonResult.failed(404,"failed");
+    }
+
 }

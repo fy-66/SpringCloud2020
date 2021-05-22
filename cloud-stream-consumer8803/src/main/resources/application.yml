@@ -1,0 +1,40 @@
+server:
+  port: 8803
+
+spring:
+  application:
+    name: cloud-stream-consumer
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit  #消息组件类型
+      bindings:
+        input:
+          destination: studyExchange  #cruiiExchange
+          content-type: application/json  #设置消息类型，文本则设置为“text/plain”
+          binder: defaultRabbit
+          group: consumerGroup
+          consumer:
+            max-attempts: 1
+            auto-bind-dlq: true
+  #连接rabbitmq
+  rabbitmq:
+    host: 192.168.33.33
+    port: 5672
+    username: root
+    password: 123456
+
+#eureka
+eureka:
+  client:
+    service-url:
+      #      defaultZone:  http://eureka7001.com:7001/eureka
+      defaultZone:  http://localhost:7001/eureka
+    fetch-registry: true
+  instance:
+    #在eureka中显示 项目名 和 ip
+    instance-id: localhost:8802 #cloud-stream-provider
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2  #心跳时间间隔
+    lease-expiration-duration-in-seconds: 5

@@ -11,6 +11,12 @@ spring:
       name: config
 #      uri: http://CLOUD-CONFIG-CENTERE
       uri: http://localhost:3344
+  #连接rabbitmq
+  rabbitmq:
+    host: 192.168.33.33
+    port: 5672
+    username: root
+    password: 123456
 
 #eureka
 eureka:
@@ -24,10 +30,7 @@ management:
   endpoints:
     web:
       exposure:
-        include:
-          - info
-          - health
-          - refresh
+        include: "*"
       jmx:
         exposure:
           exclude: "*"
